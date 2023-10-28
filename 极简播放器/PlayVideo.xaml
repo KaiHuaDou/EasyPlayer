@@ -1,0 +1,80 @@
+﻿<Window x:Class="极简播放器.PlayVideo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="极简播放器"
+        MaxWidth="800"
+        MaxHeight="600"
+        Background="{x:Null}"
+        Foreground="White"
+        AllowsTransparency="True"
+        MouseDown="Grid_MouseDown"
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None">
+    <Border x:Name="MainBorder" Background="#FF333333" CornerRadius="20">
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Label x:Name="TitleLabel"
+                       Margin="5,0,0,0" HorizontalAlignment="Left"
+                       Foreground="White"
+                       Content="极简播放器" />
+                <Button x:Name="CloseButton"
+                        DockPanel.Dock="Right"
+                        Width="36" Height="36"
+                        Margin="0,0,5,0"
+                        Style="{StaticResource DefaultButton}"
+                        Foreground="White"
+                        Click="Close_Click">
+                    &#xE8BB;
+                </Button>
+                <Button x:Name="MiniButton"
+                        DockPanel.Dock="Right"
+                        Width="36" Height="36"
+                        Style="{StaticResource DefaultButton}"
+                        Foreground="White"
+                        Click="MiniButton_Click">
+                    &#xE921;
+                </Button>
+                <Label />
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Bottom">
+                <Label x:Name="PlayedDurLabel" Foreground="White" Content="00:00:00" />
+                <Button x:Name="button"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource DefaultButton}"
+                        Click="WindowsMaxiClick" IsDefault="True">
+                    &#xE740;
+                </Button>
+                <ComboBox x:Name="sppedRadio"
+                          DockPanel.Dock="Right"
+                          Style="{x:Null}"
+                          SelectedIndex="5" SelectionChanged="SpeedRadioChanged">
+                    <ComboBoxItem Content="3x" />
+                    <ComboBoxItem Content="2x" />
+                    <ComboBoxItem Content="1.75x" />
+                    <ComboBoxItem Content="1.5x" />
+                    <ComboBoxItem Content="1.25x" />
+                    <ComboBoxItem Content="1x" />
+                    <ComboBoxItem Content="0.8x" />
+                    <ComboBoxItem Content="0.5x" />
+                </ComboBox>
+                <Button x:Name="PlayButton"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource DefaultButton}"
+                        Click="Play_Click">
+                    &#xF5B0;
+                </Button>
+                <Label x:Name="TotalDurLabel"
+                       DockPanel.Dock="Right"
+                       Foreground="White"
+                       Content="00:00:00" />
+                <Slider x:Name="ProgressSlider"
+                        Height="20"
+                        MouseUp="Progress_ValueChanged"
+                        Maximum="1" />
+            </DockPanel>
+
+            <MediaElement x:Name="player" Margin="0,0,0,0" LoadedBehavior="Manual" />
+        </DockPanel>
+    </Border>
+</Window>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="极简播放器.Launch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="极简播放器"
+        Background="{x:Null}"
+        Foreground="White"
+        FontSize="21"
+        AllowsTransparency="True"
+        MouseDown="Grid_MouseDown"
+        OpacityMask="Black"
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None">
+    <Border Background="#FF333333" CornerRadius="20">
+        <DockPanel>
+            <Label x:Name="TitleLabel"
+                   Margin="5,0,0,0" HorizontalAlignment="Left"
+                   Foreground="White"
+                   Content="极简播放器" />
+            <Button x:Name="Open"
+                    Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Style="{StaticResource DefaultButton}"
+                    Foreground="White"
+                    Click="Open_Click">
+                &#xE838;
+            </Button>
+            <Button x:Name="MiniButton"
+                    Width="36" Height="36"
+                    Style="{StaticResource DefaultButton}"
+                    Foreground="White"
+                    Click="MiniButton_Click">
+                &#xE921;
+            </Button>
+            <Button x:Name="CloseButton"
+                    Width="36" Height="36"
+                    Margin="0,0,5,0"
+                    Style="{StaticResource DefaultButton}"
+                    Foreground="White"
+                    Click="Close_Click">
+                &#xE8BB;
+            </Button>
+        </DockPanel>
+    </Border>
+</Window>

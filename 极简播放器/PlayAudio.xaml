@@ -1,0 +1,71 @@
+﻿<Window x:Class="极简播放器.PlayAudio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="极简播放器"
+        Width="400"
+        Height="90"
+        Background="{x:Null}"
+        Foreground="White"
+        FontSize="21"
+        AllowsTransparency="True"
+        MouseDown="Grid_MouseDown"
+        OpacityMask="Black"
+        ResizeMode="CanMinimize"
+        WindowStyle="None">
+    <Border Background="#FF333333" CornerRadius="20">
+        <Grid x:Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="30*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="NowFileLabel"
+                   Grid.RowSpan="2"
+                   Height="31"
+                   Margin="13,-3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Foreground="White" BorderThickness="0"
+                   Content="极简播放器" />
+            <Button x:Name="MiniButton"
+                    Width="25" Height="25"
+                    Margin="0,2,38,2" HorizontalAlignment="Right"
+                    Style="{StaticResource MaterialDesignIconButton}"
+                    Foreground="White"
+                    Click="MiniButton_Click">
+                &#xE921;
+            </Button>
+            <Button x:Name="CloseButton"
+                    Width="25" Height="25"
+                    Margin="0,2,13,2" HorizontalAlignment="Right"
+                    Style="{StaticResource MaterialDesignIconButton}"
+                    Foreground="White" BorderThickness="0"
+                    Click="Close_Click">
+                &#xE8BB;
+            </Button>
+            <Label x:Name="PlayedDurLabel"
+                   Grid.Row="1" Grid.RowSpan="2"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Foreground="White"
+                   Content="00:00:00" />
+            <Slider x:Name="ProgressSlider"
+                    Grid.Row="1"
+                    Margin="95,7,95,0" VerticalAlignment="Top"
+                    ValueChanged="Progress_ValueChanged" />
+            <Label x:Name="TotalDurLabel"
+                   Grid.Row="1" Grid.RowSpan="2"
+                   Margin="0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                   Foreground="White"
+                   Content="00:00:00" />
+            <StackPanel Grid.Row="2"
+                        Margin="182,0" HorizontalAlignment="Center" VerticalAlignment="Top"
+                        Orientation="Horizontal">
+                <Button x:Name="PlayButton"
+                        Width="35" Height="35"
+                        Style="{StaticResource MaterialDesignIconButton}"
+                        Foreground="White"
+                        Click="Play_Click">
+                    &#xF5B0;
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
